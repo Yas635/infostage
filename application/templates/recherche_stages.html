@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <h2>Recherche des Stages</h2>
+    <hr class="my-4">
+    <form method="get">
+        <label for="{{ filter.form.annee.id_for_label }}">Année :</label>
+        {{ filter.form.annee }}
+        <label for="{{ filter.form.Nom_Prenom.id_for_label }}">Nom Prenom :</label>
+        {{ filter.form.Nom_Prenom }}
+        <label for="{{ filter.form.entreprise.id_for_label }}">Entreprise :</label>
+        {{ filter.form.entreprise }}
+        <label for="{{ filter.form.q.id_for_label }}">Mot-clé dans les rapports :</label>
+        {{ filter.form.q }}
+        <button type="submit">Rechercher</button>
+    </form>
+
+    <h3>Résultats de la recherche</h3>
+    <hr class="my-4">
+    {% if filter.qs %}
+        <ul class="recherche-stages">
+            {% for stage in filter.qs %}
+                <li class="recherche-stages"><strong>{{ stage.Nom_Prenom }}</strong> - {{ stage.entreprise }} - {{ stage.annee }}
+                    <br>
+                    {% if stage.rapport %}
+                        <p>Rapport :</p>
+                        <p>URL : <a href="{{ stage.rapport.url }}" target="_blank">{{ stage.rapport.name }}</a></p>
+                    {% endif %}
+                    {% if stage.presentation %}
+                        <p>Présentation :</p>
+                        <p>URL : <a href="{{ stage.presentation.url }}" target="_blank">{{ stage.presentation.name }}</a></p>
+                    {% endif %}
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>Aucun résultat trouvé.</p>
+    {% endif %}
+<link rel="stylesheet"  href="{% static 'recherche.css' %}">
+{% endblock %}
+
+
+

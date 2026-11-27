@@ -1,0 +1,48 @@
+
+.liste-stages-container {
+    max-width: 600px;
+    margin: auto;
+}
+
+.liste-stages li {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    padding: 10px;
+}
+
+.liste-stages li strong {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.liste-stages li a {
+    color: #cd0000; 
+}
+
+
+.btn-supprimer {
+    background-color: #b2b2b2; 
+    color: #fff;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.btn-supprimer:hover {
+    background-color: #eaeaea; 
+    color: #ffffff;
+    
+}
+
+.liste-stages-container h2 {
+    
+    font-size: 30px; 
+    font-weight: bold; 
+    text-align: center; 
+    margin-bottom: 20px; 
+    margin-top: 20px;
+    
+}
+

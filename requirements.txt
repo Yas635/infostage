@@ -1,0 +1,4 @@
+Django>=5.0,<5.2
+django-filter>=24.1
+pdfminer.six>=20231228
+python-docx>=1.1

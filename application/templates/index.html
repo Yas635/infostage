@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+
+<section class="container mt-5">
+  <div class="jumbotron">
+      <h1 class="display-4">Bienvenue dans INFOSTAGE !</h1>
+      <p class="lead">Explorez, importez des fichiers, recherchez des stages et bien plus encore.</p>
+      <hr class="my-4">
+      <p>Cette application vous permet de gérer les informations de vos stages de manière simple et efficace.</p>
+      <a class="btn btn-primary btn-lg" href="{% url 'liste_stages' %}" role="button">Découvrir les Stages</a>
+  </div>
+</section>
+
+<hr class="my-4">
+<section class="container my-5">
+  <div class="row">
+      <div class="col-md-4">
+          <h2>Explorez</h2>
+          <p>Explorez les fichiers.</p>
+      </div>
+      <div class="col-md-4">
+          <h2>Importez</h2>
+          <p>importez des fichiers.</p>
+      </div>
+      <div class="col-md-4">
+          <h2>Recherchez</h2>
+          <p>recherchez des stages et bien plus encore.</p>
+      </div>
+  </div>
+</section>
+
+
+<footer class="container-fluid bg-dark text-white text-center py-3">
+  <p>&copy; BENGHANNOU OMAR & AHRIMCH YASSINE</p>
+</footer>
+
+  
+{% endblock %}

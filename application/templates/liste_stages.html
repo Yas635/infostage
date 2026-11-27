@@ -1,0 +1,39 @@
+
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <div class="liste-stages-container">
+        <h2>Liste des Stages</h2>
+        <hr class="my-4">
+        <ul class="liste-stages">
+            {% for stage in stages %}
+                <li>
+                    <strong>{{ stage.Nom_Prenom }}</strong> - {{ stage.entreprise }} - {{ stage.annee }}
+                    <br>
+                    {% if stage.rapport %}
+                        <p>Rapport :</p>
+                        <p>URL : <a href="{{ stage.rapport.url }}" target="_blank">{{ stage.rapport.name }}</a></p>
+                    {% endif %}
+                    {% if stage.presentation %}
+                        <p>Présentation :</p>
+                        <p>URL : <a href="{{ stage.presentation.url }}" target="_blank">{{ stage.presentation.name }}</a></p>
+                    {% endif %}
+                    <form method="post" action="{% url 'supprimer_stage' stage.id %}" onsubmit="return confirm('Supprimer ce stage ?');">
+                        {% csrf_token %}
+                        <button type="submit" class="btn btn-supprimer">Supprimer</button>
+                    </form>
+                </li>
+            {% empty %}
+                <li>Aucun stage enregistré.</li>
+            {% endfor %}
+        </ul>
+    </div>
+
+    <link rel="stylesheet"  href="{% static 'style.css' %}">
+{% endblock %}
+
+
+
+
+
+
